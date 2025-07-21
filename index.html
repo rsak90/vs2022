@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLARITEA</title>
+    <title>CLARITEA - Modern Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,27 +13,25 @@
             <div class="logo-container">
                 <img src="https://services.iconmedicalimaging.com/CLARITEA/assets/images/logo.png" alt="CLARITEA Logo">
             </div>
-            <h2>CLARITEA</h2>
-            <p>Your session has timed out. Please enter your username and password to continue.</p>
+            <h2>Welcome to CLARITEA</h2>
+            <p>Please log in to continue.</p>
             <form class="login-form">
                 <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
+                    <input type="text" id="username" name="username" required placeholder="Username">
                 </div>
                 <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="password" name="password" required placeholder="Password">
                 </div>
                 <button type="submit">Login</button>
                 <div class="action-buttons">
                     <div class="dropdown">
-                        <button class="dropbtn">Reset Password</button>
+                        <button type="button" class="dropbtn"><span>Reset Password</span></button>
                         <div class="dropdown-content">
-                            <a href="#">Reset Password</a>
-                            <a href="#">Reset Password External</a>
+                            <a href="#">Internal</a>
+                            <a href="#">External</a>
                         </div>
                     </div>
-                    <button class="help-button">Help</button>
+                    <button type="button" class="help-button">Help</button>
                 </div>
             </form>
         </div>

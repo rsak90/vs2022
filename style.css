@@ -1,118 +1,120 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5;
-}
-
-.login-container {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
+.login-container {
+    perspective: 1000px;
+}
+
 .login-box {
     background-color: #fff;
-    padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
-    max-width: 400px;
+    width: 400px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.login-box:hover {
+    transform: rotateY(5deg);
 }
 
 .logo-container img {
-    max-width: 150px;
+    max-width: 120px;
     margin-bottom: 1rem;
 }
 
 h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
 }
 
 p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     color: #666;
 }
 
 .input-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: left;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
 }
 
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.75rem 1rem;
     border: 1px solid #ccc;
-    border-radius: 3px;
-    border-left: 5px solid #128474;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    border-left: 5px solid #008080;
+    background-color: #f9f9f9;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #008080;
+    box-shadow: 0 0 5px rgba(0, 128, 128, 0.5);
+    background-color: #fff;
 }
 
 button {
     width: 100%;
     padding: 0.75rem;
     border: none;
-    border-radius: 3px;
-    background-color: #128474;
+    border-radius: 5px;
+    background-color: #008080;
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
 }
 
 button:hover {
-    background-color: #0e695b;
-}
-
-.extra-links {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: space-between;
-}
-
-.extra-links a {
-    color: #128474;
-    text-decoration: none;
-}
-
-.extra-links a:hover {
-    text-decoration: underline;
+    background-color: #006666;
 }
 
 .action-buttons {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    gap: 1rem;
 }
 
 .dropbtn, .help-button {
-    background-color: #128474;
-    color: white;
+    background-color: #f0f0f0;
+    color: #333;
     padding: 0.75rem;
     font-size: 1rem;
-    border: none;
-    border-radius: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     cursor: pointer;
-    width: 48%;
+    width: 100%;
+    transition: all 0.3s ease;
 }
 
 .dropbtn:hover, .help-button:hover {
-    background-color: #0e695b;
+    background-color: #e0e0e0;
+    border-color: #999;
 }
 
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
-    width: 48%;
+    width: 100%;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -120,25 +122,22 @@ button:hover {
     min-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    transition: background-color 0.2s;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #0e695b;
 }
