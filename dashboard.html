@@ -3,48 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLARITEA - Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>CLARITEA Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="dashboard-container">
-        <aside class="sidebar">
-            <div class="logo-container">
-                <img src="https://services.iconmedicalimaging.com/CLARITEA/assets/images/logo.png" alt="CLARITEA Logo">
-                <h2>CLARITEA</h2>
+    <header>
+        <div class="header-left">
+            <button class="dashboard-button">Dashboard</button>
+        </div>
+        <div class="header-right">
+            <span class="user-info">Ajith1 Kumar1</span>
+            <span class="date-time">21-Jul-2025 05:54 PM</span>
+            <img src="https://services.iconmedicalimaging.com/CLARITEA/assets/images/logo.png" alt="CLARITEA Logo" class="logo">
+            <span class="version">v.1.1.0</span>
+            <button class="logout-button">Log out</button>
+        </div>
+    </header>
+    <main>
+        <div class="widget">
+            <div class="widget-header">
+                <h3><i class="fas fa-sync-alt"></i> Sponsor / Protocol:</h3>
             </div>
-            <nav class="menu">
-                <a href="#" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-                <a href="#"><i class="fas fa-user"></i> Profile</a>
-                <a href="#"><i class="fas fa-cog"></i> Settings</a>
-                <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
-            </nav>
-        </aside>
-        <main class="main-content">
-            <header>
-                <h1>Dashboard</h1>
-                <div class="user-info">
-                    <span>Welcome, User!</span>
-                    <img src="https://i.pravatar.cc/40" alt="User Avatar">
-                </div>
-            </header>
-            <section class="cards">
-                <div class="card">
-                    <h3>Card 1</h3>
-                    <p>Some information here.</p>
-                </div>
-                <div class="card">
-                    <h3>Card 2</h3>
-                    <p>Some information here.</p>
-                </div>
-                <div class="card">
-                    <h3>Card 3</h3>
-                    <p>Some information here.</p>
-                </div>
-            </section>
-        </main>
-    </div>
+            <div class="widget-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sponsor/Protocol</th>
+                            <th># Cases</th>
+                            <th># On Hold</th>
+                            <th># Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>AMN1/20210123</td><td>0</td><td>0</td><td>114</td></tr>
+                        <tr><td>AMN1/20210125</td><td>0</td><td>0</td><td>28</td></tr>
+                        <tr><td>ATS1/ATH-002-000</td><td>4</td><td>0</td><td>1</td></tr>
+                        <tr><td>BIN2/BMN 111-211</td><td>6</td><td>0</td><td>20</td></tr>
+                        <tr><td>BIN2/111-210</td><td>6</td><td>0</td><td>39</td></tr>
+                        <tr><td>BIN2/BMN 111-303</td><td>1</td><td>0</td><td>137</td></tr>
+                        <tr><td>DEMO/CLARITEA DEMO</td><td>5</td><td>0</td><td>5</td></tr>
+                        <tr><td>ELI1/14V-MC-JAIO</td><td>3</td><td>0</td><td>437</td></tr>
+                        <tr><td>HAE2/QST-19-007</td><td>2</td><td>2</td><td>75</td></tr>
+                        <tr><td>MEK2/MK-6024-016</td><td>0</td><td>0</td><td>225</td></tr>
+                        <tr><td>PPD1/CLTP001A12202</td><td>7</td><td>0</td><td>5</td></tr>
+                        <tr><td>VES2/VENT-03-201</td><td>0</td><td>0</td><td>3</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="widget">
+            <div class="widget-header">
+                <h3><i class="fas fa-sync-alt"></i> Read Type:</h3>
+            </div>
+            <div class="widget-content">
+                <p>Read type content goes here.</p>
+            </div>
+        </div>
+        <div class="widget">
+            <div class="widget-header">
+                <h3><i class="fas fa-sync-alt"></i> Event Type:</h3>
+            </div>
+            <div class="widget-content">
+                <p>Event type content goes here.</p>
+            </div>
+        </div>
+        <div class="widget">
+            <div class="widget-header">
+                <h3><i class="fas fa-sync-alt"></i> Cases for Review:</h3>
+            </div>
+            <div class="widget-content">
+                <p>Cases for review content goes here.</p>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.querySelectorAll('.widget-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const widget = header.parentElement;
+                widget.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
