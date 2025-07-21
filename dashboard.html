@@ -78,11 +78,33 @@
         </div>
     </main>
     <script>
-        document.querySelectorAll('.widget-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const widget = header.parentElement;
-                widget.classList.toggle('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle widget content
+            document.querySelectorAll('.widget-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const widget = header.parentElement;
+                    widget.classList.toggle('active');
+                });
             });
+
+            // Calculate and display summary data
+            const table = document.querySelector('.widget-content table');
+            const rows = table.querySelectorAll('tbody tr');
+            
+            let totalCases = 0;
+            let onHold = 0;
+            let completed = 0;
+
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                totalCases += parseInt(cells[1].innerText) || 0;
+                onHold += parseInt(cells[2].innerText) || 0;
+                completed += parseInt(cells[3].innerText) || 0;
+            });
+
+            document.getElementById('total-cases').innerText = totalCases;
+            document.getElementById('on-hold').innerText = onHold;
+            document.getElementById('completed').innerText = completed;
         });
     </script>
 </body>
