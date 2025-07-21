@@ -4,104 +4,228 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLARITEA Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="header-left">
-            <button class="dashboard-button">Dashboard</button>
+            <img src="https://services.iconmedicalimaging.com/CLARITEA/assets/images/logo.png" alt="CLARITEA Logo" class="logo">
+            <h1>CLARITEA</h1>
         </div>
         <div class="header-right">
             <span class="user-info">Ajith1 Kumar1</span>
             <span class="date-time">21-Jul-2025 05:54 PM</span>
-            <img src="https://services.iconmedicalimaging.com/CLARITEA/assets/images/logo.png" alt="CLARITEA Logo" class="logo">
             <span class="version">v.1.1.0</span>
             <button class="logout-button">Log out</button>
         </div>
     </header>
-    <main>
-        <div class="widget">
-            <div class="widget-header">
-                <h3><i class="fas fa-sync-alt"></i> Sponsor / Protocol:</h3>
+    <div class="container">
+        <section class="summary-cards">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+                <div class="card-info">
+                    <p>Total Cases</p>
+                    <h3 id="total-cases">0</h3>
+                </div>
             </div>
-            <div class="widget-content">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Sponsor/Protocol</th>
-                            <th># Cases</th>
-                            <th># On Hold</th>
-                            <th># Completed</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>AMN1/20210123</td><td>0</td><td>0</td><td>114</td></tr>
-                        <tr><td>AMN1/20210125</td><td>0</td><td>0</td><td>28</td></tr>
-                        <tr><td>ATS1/ATH-002-000</td><td>4</td><td>0</td><td>1</td></tr>
-                        <tr><td>BIN2/BMN 111-211</td><td>6</td><td>0</td><td>20</td></tr>
-                        <tr><td>BIN2/111-210</td><td>6</td><td>0</td><td>39</td></tr>
-                        <tr><td>BIN2/BMN 111-303</td><td>1</td><td>0</td><td>137</td></tr>
-                        <tr><td>DEMO/CLARITEA DEMO</td><td>5</td><td>0</td><td>5</td></tr>
-                        <tr><td>ELI1/14V-MC-JAIO</td><td>3</td><td>0</td><td>437</td></tr>
-                        <tr><td>HAE2/QST-19-007</td><td>2</td><td>2</td><td>75</td></tr>
-                        <tr><td>MEK2/MK-6024-016</td><td>0</td><td>0</td><td>225</td></tr>
-                        <tr><td>PPD1/CLTP001A12202</td><td>7</td><td>0</td><td>5</td></tr>
-                        <tr><td>VES2/VENT-03-201</td><td>0</td><td>0</td><td>3</td></tr>
-                    </tbody>
-                </table>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-pause-circle"></i></div>
+                <div class="card-info">
+                    <p>Cases On Hold</p>
+                    <h3 id="on-hold">0</h3>
+                </div>
             </div>
-        </div>
-        <div class="widget">
-            <div class="widget-header">
-                <h3><i class="fas fa-sync-alt"></i> Read Type:</h3>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-check-circle"></i></div>
+                <div class="card-info">
+                    <p>Total Completed</p>
+                    <h3 id="completed">0</h3>
+                </div>
             </div>
-            <div class="widget-content">
-                <p>Read type content goes here.</p>
+        </section>
+        <main class="dashboard-layout">
+            <div class="main-column">
+                <div id="protocol-widget" class="widget active">
+                    <div class="widget-header">
+                        <h3><i class="fas fa-sync-alt"></i> Sponsor / Protocol:</h3>
+                    </div>
+                    <div class="widget-content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Sponsor/Protocol</th>
+                                    <th># Cases</th>
+                                    <th># On Hold</th>
+                                    <th># Completed</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>AMN1/20210123</td><td>0</td><td>0</td><td>114</td></tr>
+                                <tr><td>AMN1/20210125</td><td>0</td><td>0</td><td>28</td></tr>
+                                <tr><td>ATS1/ATH-002-000</td><td>4</td><td>0</td><td>1</td></tr>
+                                <tr><td>BIN2/BMN 111-211</td><td>6</td><td>0</td><td>20</td></tr>
+                                <tr><td>BIN2/111-210</td><td>6</td><td>0</td><td>39</td></tr>
+                                <tr><td>BIN2/BMN 111-303</td><td>1</td><td>0</td><td>137</td></tr>
+                                <tr><td>DEMO/CLARITEA DEMO</td><td>5</td><td>0</td><td>5</td></tr>
+                                <tr><td>ELI1/14V-MC-JAIO</td><td>3</td><td>0</td><td>437</td></tr>
+                                <tr><td>HAE2/QST-19-007</td><td>2</td><td>2</td><td>75</td></tr>
+                                <tr><td>MEK2/MK-6024-016</td><td>0</td><td>0</td><td>225</td></tr>
+                                <tr><td>PPD1/CLTP001A12202</td><td>7</td><td>0</td><td>5</td></tr>
+                                <tr><td>VES2/VENT-03-201</td><td>0</td><td>0</td><td>3</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="widget">
-            <div class="widget-header">
-                <h3><i class="fas fa-sync-alt"></i> Event Type:</h3>
+            <div class="sidebar-column">
+                <div id="read-type-widget" class="widget disabled">
+                    <div class="widget-header">
+                        <h3><i class="fas fa-sync-alt"></i> Read Type:</h3>
+                    </div>
+                    <div class="widget-content">
+                        <p>Please make a selection in the previous step.</p>
+                    </div>
+                </div>
+                <div id="event-type-widget" class="widget disabled">
+                    <div class="widget-header">
+                        <h3><i class="fas fa-sync-alt"></i> Event Type:</h3>
+                    </div>
+                    <div class="widget-content">
+                        <p>Please make a selection in the previous step.</p>
+                    </div>
+                </div>
+                <div id="cases-widget" class="widget disabled">
+                    <div class="widget-header">
+                        <h3><i class="fas fa-sync-alt"></i> Cases for Review:</h3>
+                    </div>
+                    <div class="widget-content">
+                        <p>Please make a selection in the previous step.</p>
+                    </div>
+                </div>
+                <div id="visits-widget" class="widget disabled">
+                    <div class="widget-header">
+                        <h3><i class="fas fa-calendar-check"></i> Visits:</h3>
+                    </div>
+                    <div class="widget-content">
+                        <p>Please make a selection in the previous step.</p>
+                    </div>
+                </div>
             </div>
-            <div class="widget-content">
-                <p>Event type content goes here.</p>
-            </div>
-        </div>
-        <div class="widget">
-            <div class="widget-header">
-                <h3><i class="fas fa-sync-alt"></i> Cases for Review:</h3>
-            </div>
-            <div class="widget-content">
-                <p>Cases for review content goes here.</p>
-            </div>
-        </div>
-    </main>
+        </main>
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Toggle widget content
-            document.querySelectorAll('.widget-header').forEach(header => {
+            // --- DATA SIMULATION ---
+            const data = {
+                'AMN1/20210123': {
+                    readTypes: ['Screening', 'Baseline'],
+                    events: {'Screening': ['ECG', 'Vitals'], 'Baseline': ['Labs']},
+                    cases: {'ECG': ['Case 001', 'Case 002'], 'Vitals': ['Case 003'], 'Labs': ['Case 004']},
+                    visits: {'Case 001': ['Visit 1A', 'Visit 1B'], 'Case 002': ['Visit 2A'], 'Case 003': ['Visit 3A'], 'Case 004': ['Visit 4A']}
+                },
+                'ATS1/ATH-002-000': {
+                    readTypes: ['Follow-up'],
+                    events: {'Follow-up': ['Imaging', 'Questionnaire']},
+                    cases: {'Imaging': ['Case 101'], 'Questionnaire': ['Case 102', 'Case 103']},
+                    visits: {'Case 101': ['Visit 101A'], 'Case 102': ['Visit 102A'], 'Case 103': ['Visit 103A', 'Visit 103B']}
+                }
+                // Add more data for other protocols as needed
+            };
+
+            // --- DOM ELEMENTS ---
+            const widgets = {
+                protocol: document.querySelector('#protocol-widget'),
+                readType: document.querySelector('#read-type-widget'),
+                eventType: document.querySelector('#event-type-widget'),
+                cases: document.querySelector('#cases-widget'),
+                visits: document.querySelector('#visits-widget'),
+            };
+
+            // --- FUNCTIONS ---
+            function clearWidget(widget) {
+                const content = widget.querySelector('.widget-content');
+                content.innerHTML = '<p>Please make a selection in the previous step.</p>';
+                widget.classList.remove('active');
+                widget.classList.add('disabled');
+            }
+
+            function populateWidget(widget, title, items) {
+                const content = widget.querySelector('.widget-content');
+                if (!items || items.length === 0) {
+                    clearWidget(widget);
+                    return;
+                }
+                let table = '<table><tbody>';
+                items.forEach(item => {
+                    table += `<tr><td>${item}</td></tr>`;
+                });
+                table += '</tbody></table>';
+                content.innerHTML = table;
+                widget.classList.add('active');
+                widget.classList.remove('disabled');
+            }
+
+            function handleRowClick(e, widgetName, nextWidgetName, dataKey) {
+                const selectedRow = e.target.closest('tr');
+                if (!selectedRow) return;
+
+                const widget = widgets[widgetName];
+                if (widget.classList.contains('disabled')) return;
+
+                // Clear subsequent widgets
+                const widgetNames = Object.keys(widgets);
+                const currentWidgetIndex = widgetNames.indexOf(widgetName);
+                for (let i = currentWidgetIndex + 1; i < widgetNames.length; i++) {
+                    clearWidget(widgets[widgetNames[i]]);
+                }
+
+                // Highlight selected row
+                widgets[widgetName].querySelectorAll('tr').forEach(r => r.classList.remove('selected'));
+                selectedRow.classList.add('selected');
+
+                const selectedValue = selectedRow.cells[0].innerText;
+                const protocol = widgets.protocol.querySelector('.selected')?.cells[0].innerText;
+                const readType = widgets.readType.querySelector('.selected')?.cells[0].innerText;
+                const eventType = widgets.eventType.querySelector('.selected')?.cells[0].innerText;
+
+                if (data[protocol]) {
+                    let nextData = [];
+                    if (nextWidgetName === 'readType') nextData = data[protocol].readTypes;
+                    if (nextWidgetName === 'eventType') nextData = data[protocol].events[selectedValue];
+                    if (nextWidgetName === 'cases') nextData = data[protocol].cases[selectedValue];
+                    if (nextWidgetName === 'visits') nextData = data[protocol].visits[selectedValue];
+                    
+                    populateWidget(widgets[nextWidgetName], 'Title', nextData);
+                }
+            }
+
+            // --- EVENT LISTENERS ---
+            widgets.protocol.querySelector('.widget-content').addEventListener('click', (e) => handleRowClick(e, 'protocol', 'readType'));
+            widgets.readType.querySelector('.widget-content').addEventListener('click', (e) => handleRowClick(e, 'readType', 'eventType'));
+            widgets.eventType.querySelector('.widget-content').addEventListener('click', (e) => handleRowClick(e, 'eventType', 'cases'));
+            widgets.cases.querySelector('.widget-content').addEventListener('click', (e) => handleRowClick(e, 'cases', 'visits'));
+
+            // Add header click to toggle sections that are not disabled
+            Object.values(widgets).forEach(widget => {
+                const header = widget.querySelector('.widget-header');
                 header.addEventListener('click', () => {
-                    const widget = header.parentElement;
-                    widget.classList.toggle('active');
+                    if (!widget.classList.contains('disabled')) {
+                        widget.classList.toggle('active');
+                    }
                 });
             });
 
-            // Calculate and display summary data
-            const table = document.querySelector('.widget-content table');
+            // Initial calculation for summary cards
+            const table = widgets.protocol.querySelector('table');
             const rows = table.querySelectorAll('tbody tr');
-            
-            let totalCases = 0;
-            let onHold = 0;
-            let completed = 0;
-
+            let totalCases = 0, onHold = 0, completed = 0;
             rows.forEach(row => {
-                const cells = row.querySelectorAll('td');
-                totalCases += parseInt(cells[1].innerText) || 0;
-                onHold += parseInt(cells[2].innerText) || 0;
-                completed += parseInt(cells[3].innerText) || 0;
+                totalCases += parseInt(row.cells[1].innerText) || 0;
+                onHold += parseInt(row.cells[2].innerText) || 0;
+                completed += parseInt(row.cells[3].innerText) || 0;
             });
-
             document.getElementById('total-cases').innerText = totalCases;
             document.getElementById('on-hold').innerText = onHold;
             document.getElementById('completed').innerText = completed;
